@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PWEB</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="content1" width="300px" height="300px">Seu navegador não suporta o Canvas do HTML5. <br> Procure atualizá-lo.</canvas>
+
+    <canvas id="content2" width="300px" height="300px"></canvas>
+    
+    <canvas id="content3" width="300px" height="300px"></canvas>
+
+    <canvas id="content4" width="300px" height="300px"></canvas>
+
+    <canvas id="content5", width="300px" height="300px"></canvas>
+
+    <script>
+        
+        let content1 = document.querySelector("#content1");
+        let context = content1.getContext("2d");
+        
+        context.fillStyle = 'white';
+        context.fillRect(120, 120, 100, 100);
+        context.lineWidth = 3;
+        context.strokeStyle = 'black';
+        context.strokeRect(80, 80, 100, 100);
+
+        let content2 = document.querySelector("#content2");
+        let context1 = content2.getContext("2d");
+        
+        context1.beginPath();
+        context1.moveTo(75, 250);
+        context1.lineTo(150, 50);
+        context1.lineTo(225, 250);
+        context1.lineTo(50, 120);
+        context1.lineTo(250, 120);
+        context1.lineTo(75, 250);
+
+        context1.lineWidth = 5;
+        context1.strokeStyle = 'white';
+        context1.stroke();
+
+        let content3 = document.querySelector("#content3");
+        let context2 = content3.getContext("2d");
+
+        context2.beginPath();
+
+        context2.arc(
+            100, 
+            150, 
+            50, 
+            90 * Math.PI / 180,
+            270 * Math.PI / 180,
+            false
+            );
+
+        context2.arc(200,
+        150,
+        50,
+        90 * Math.PI / 180,
+        270 * Math.PI / 180,
+        true
+        );
+        
+        context2.lineWidth = 5;
+        context2.strokeStyle = 'black';
+        context2.stroke();
+        context2.fillStyle = 'white'
+        context2.fill()
+
+        let content4 = document.getElementById("content4");
+        let context3 = content4.getContext("2d");
+
+        context3.beginPath();
+        context3.arc(150, 150, 70, 0, 2 * Math.PI);
+        context3.fillStyle = 'white';
+        context3.fill();
+        context3.lineWidth = 5;
+        context3.strokeStyle = 'black';
+        context3.stroke();
+
+        let content5 = document.getElementById("content5");
+        let context4 = content5.getContext("2d");
+
+        let image = new Image();
+        image.src = 'BobEsponja.jpg';
+        image.onload = function() {
+            context4.drawImage(image, 50, 50, 200, 200)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+.content-box {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 75vw;
+    height: 40vh;
+}
+
+#content1 {
+    background-color: grey;
+}
+
+#content2 {
+    background-color: grey;
+}
+
+#content3 {
+    background-color: grey;
+}
+
+#content4 {
+    background-color: grey;
+}
+
+#content5 {
+    background-color: grey;
+}
